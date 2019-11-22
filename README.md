@@ -8,7 +8,7 @@
 
 
 
-+前端技术：
++ 前端技术：
 
     + 基础的HTML、CSS、JavaScript（基于ES6标准）
     + JQuery
