@@ -28,6 +28,7 @@
     + Redis-4.0.9
     + RabbitMQ-3.4
     + Elasticsearch-5.6.8
-    + nginx-1.14.0：
+    + nginx-1.10.0：
     + FastDFS - 5.0.8
     + Thymeleaf
+    + Swagger2
