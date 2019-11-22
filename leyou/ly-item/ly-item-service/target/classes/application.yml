@@ -1,0 +1,38 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/leyou2?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+          maximum-pool-size: 30
+          minimum-idle: 10
+  cloud:
+    refresh:
+      refreshable: none
+  rabbitmq:
+    host: 192.168.2.106
+    port: 5672
+    username: leyou
+    password: leyou
+    virtual-host: /leyou
+    #在RabbitMQ中可以虚拟消息服务器VirtualHost，每个VirtualHost相当月一个相对独立的RabbitMQ服务器，每个VirtualHost之间是相互隔离的。exchange、queue、message不能互通。 相当于mysql的db。
+    template: #配置spring整合rabbitmq的AmqpTemplate
+      exchange: LEYOU.ITEM.EXCHANGE #默认把消息发到此交换机
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5    #心跳时间
+    lease-expiration-duration-in-seconds: 15  #过期时间
+mybatis:
+  type-aliases-package:  com.leyou.item.pojo  #别名扫描
+
+
+
+
